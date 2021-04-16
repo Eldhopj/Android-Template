@@ -28,7 +28,7 @@ abstract class BaseFragment<T : ViewBinding> : Fragment() {
     /**
      * getting Activity
      */
-    protected val activity by lazy { requireActivity() as MainActivity? }
+    protected val hostActivity by lazy { requireActivity() as? MainActivity }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,7 +41,7 @@ abstract class BaseFragment<T : ViewBinding> : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        activity?.unblockInput()
+        hostActivity?.unblockInput()
         _binding = null
     }
 
