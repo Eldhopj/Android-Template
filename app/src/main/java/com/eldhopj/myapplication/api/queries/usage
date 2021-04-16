@@ -1,0 +1,28 @@
+Create @QueryMap and @FieldMap for necessary api end points
+
+
+eg:
+
+class SubscriberQuery(
+    private val email: String? = null,
+    private val password: String? = null,
+    private val subscriberName: String? = null,
+    private val country: String? = null,
+    private val googleToken: String? = null,
+    private val facebookToken: String? = null
+
+) {
+
+    fun toMap(): Map<String, String> {
+        return mutableMapOf<String, String>().apply {
+            email?.let { put("email", it) }
+            password?.let { put("password", it) }
+            country?.let { put("country", it) }
+            subscriberName?.let { put("subscribername", it) }
+            googleToken?.let { put("gtoken", it) }
+            facebookToken?.let { put("fbtoken", it) }
+        }
+    }
+}
+
+Remove this file
