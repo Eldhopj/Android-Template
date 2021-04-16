@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="RecyclerView">
+        <item name="android:layout_width">0dp</item>
+    </style>
+
+    <style name="RecyclerView.Vertical">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layoutAnimation">@anim/linear_layout_anim</item>
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+
+    <style name="RecyclerView.Horizontal">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+
+    <style name="RecyclerView.Grid">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="layoutManager">androidx.recyclerview.widget.GridLayoutManager</item>
+        <item name="android:layoutAnimation">@anim/grid_layout_anim</item>
+        <item name="spanCount">2</item>
+    </style>
+
+</resources>
