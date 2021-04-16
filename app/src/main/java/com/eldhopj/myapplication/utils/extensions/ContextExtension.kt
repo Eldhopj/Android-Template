@@ -134,7 +134,8 @@ fun Context?.getAppUserAgent(): String {
     } catch (e: PackageManager.NameNotFoundException) {
         "?"
     }
-    return "${this.getString(R.string.app_name)}/$versionName (${Build.MANUFACTURER} ${Build.MODEL};Android ${Build.VERSION.RELEASE})"
+    return "${this.getString(R.string.app_name)}/$versionName" +
+        " (${Build.MANUFACTURER} ${Build.MODEL};Android ${Build.VERSION.RELEASE})"
 }
 
 /**

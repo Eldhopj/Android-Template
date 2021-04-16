@@ -8,9 +8,13 @@ import com.eldhopj.myapplication.R
 import com.eldhopj.myapplication.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+/**
+ * Main activity
+ *
+ * @constructor Create empty Main activity
+ */
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-
     private lateinit var navController: NavController
     private lateinit var binding: ActivityMainBinding
 

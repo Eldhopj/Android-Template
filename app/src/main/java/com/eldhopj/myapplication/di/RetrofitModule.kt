@@ -1,7 +1,7 @@
 package com.eldhopj.myapplication.di
 
 import android.content.Context
-import androidx.viewbinding.BuildConfig
+import com.eldhopj.myapplication.BuildConfig
 import com.eldhopj.myapplication.R
 import com.eldhopj.myapplication.utils.extensions.getAppUserAgent
 import com.eldhopj.myapplication.utils.extensions.isOnline
