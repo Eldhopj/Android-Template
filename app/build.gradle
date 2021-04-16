@@ -5,6 +5,7 @@ plugins {
     id 'kotlin-parcelize'
     id 'androidx.navigation.safeargs.kotlin'
     id 'dagger.hilt.android.plugin'
+    id "io.gitlab.arturbosch.detekt" version "1.14.2"
 }
 
 android {
@@ -80,7 +81,32 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
-
 kapt {
     correctErrorTypes true
+}
+
+
+//TODO : enable and configure (config/detekt/detekt.yml) detekt in plugin
+detekt {
+    failFast = false // fail build on any finding
+    buildUponDefaultConfig = true // preconfigure defaults
+    // If set to `true` the build does not fail when the maxIssues count was reached. Defaults to `false`
+    ignoreFailures = true
+    config = files("$projectDir/config/detekt.yml") // point to your custom config defining rules to run, overwriting default behavior
+
+    ignoredBuildTypes = ["release"]
+
+    reports {
+        xml {
+            enabled = true
+            destination = file("$buildDir/reports/checkstyle-result.xml")
+        }
+        html {
+            enabled = true // observe findings in your browser with structure and code snippets
+            destination = file("$buildDir/reports/checkstyle-result.html")
+        }
+        txt {
+            enabled = false
+        }
+    }
 }
