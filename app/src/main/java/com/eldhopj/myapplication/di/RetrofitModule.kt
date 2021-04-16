@@ -29,7 +29,9 @@ object RetrofitModule {
     private const val HEADER_CACHE_CONTROL =
         "Cache-Control" // removes Cache-Control header from the server, and apply our own cache control
     private const val HEADER_PRAGMA = "Pragma" // overrides "Not to use caching scenario"
-    private const val cacheSize = 5 * 1024 * 1024.toLong() // 5 MB
+    private const val CACHE_SIZE = 5 * 1024 * 1024.toLong() // 5 MB
+    private const val MAX_AGE = 10 // if a request comes within 10s it will show from cache
+    private const val MAX_STALE = 15 // No days cache works when offline mode
 
 
     @Provides
@@ -59,7 +61,7 @@ object RetrofitModule {
     @Provides
     @Singleton
     fun providesCache(@ApplicationContext context: Context): Cache {
-        return Cache(File(context.cacheDir, context.getString(R.string.app_name)), cacheSize)
+        return Cache(File(context.cacheDir, context.getString(R.string.app_name)), CACHE_SIZE)
     }
 
     @Provides
@@ -96,9 +98,9 @@ object RetrofitModule {
             val response = chain.proceed(chain.request())
             val cacheControl = CacheControl.Builder()
                 .maxAge(
-                    5,
+                    MAX_AGE,
                     TimeUnit.SECONDS
-                ) // Cache the response only for 5 sec, so if a request comes within 30sec it will show from cache
+                ) // Cache the response only for 10 sec, so if a request comes within 10sec it will show from cache
                 .build()
             response.newBuilder()
                 .removeHeader(HEADER_PRAGMA)
@@ -120,7 +122,7 @@ object RetrofitModule {
             var request = chain.request()
             if (!context.isOnline()) { // makes the network is not available only
                 val cacheControl = CacheControl.Builder()
-                    .maxStale(5, TimeUnit.DAYS)
+                    .maxStale(MAX_STALE, TimeUnit.DAYS)
                     .build()
                 request = request.newBuilder()
                     .removeHeader(HEADER_PRAGMA)

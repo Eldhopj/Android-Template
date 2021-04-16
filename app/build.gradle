@@ -87,7 +87,7 @@ kapt {
 
 
 // TODO : enable detekt
-// config file (config/detekt/detekt.yml) & baseline file (config/detekt/baseline.xml)
+// config file (app/config/detekt.yml) & baseline file (app/config/baseline.xml)
 detekt {
     failFast = false // fail build on any finding
     buildUponDefaultConfig = true // preconfigure defaults

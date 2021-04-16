@@ -3,7 +3,7 @@
   <component name="DetektProjectConfiguration">
     <enableDetekt>true</enableDetekt>
     <enableFormatting>true</enableFormatting>
-    <rulesPath>config/detekt/detekt.yml</rulesPath>
-    <baselinePath>config/detekt/baseline.xml</baselinePath>
+    <rulesPath>app/config/detekt.yml</rulesPath>
+    <baselinePath>app/config/baseline.xml</baselinePath>
   </component>
 </project>

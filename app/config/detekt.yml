@@ -172,7 +172,7 @@ formatting:
   SpacingBetweenDeclarationsWithAnnotations:
     active: true
   SpacingBetweenDeclarationsWithComments:
-    active: true
+    active: false
 
 style:
   ClassOrdering:
