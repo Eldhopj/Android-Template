@@ -106,7 +106,6 @@ comments:
   UndocumentedPublicFunction:
     active: true
 
-
 complexity:
   active: true
   StringLiteralDuplication:
