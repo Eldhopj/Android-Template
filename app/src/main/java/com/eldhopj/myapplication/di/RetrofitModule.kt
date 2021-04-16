@@ -120,7 +120,7 @@ object RetrofitModule {
     fun providesOfflineInterceptor(@ApplicationContext context: Context): Interceptor {
         return Interceptor { chain ->
             var request = chain.request()
-            if (!context.isOnline()) { // makes the network is not available only
+            if (!context.isOnline()) {
                 val cacheControl = CacheControl.Builder()
                     .maxStale(MAX_STALE, TimeUnit.DAYS)
                     .build()
