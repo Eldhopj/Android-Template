@@ -4,5 +4,6 @@
     <enableDetekt>true</enableDetekt>
     <enableFormatting>true</enableFormatting>
     <rulesPath>config/detekt/detekt.yml</rulesPath>
+    <baselinePath>config/detekt/baseline.xml</baselinePath>
   </component>
 </project>

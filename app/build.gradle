@@ -5,7 +5,7 @@ plugins {
     id 'kotlin-parcelize'
     id 'androidx.navigation.safeargs.kotlin'
     id 'dagger.hilt.android.plugin'
-    id "io.gitlab.arturbosch.detekt" version "1.14.2"
+    id "io.gitlab.arturbosch.detekt" version "1.16.0"
 }
 
 android {
@@ -86,13 +86,15 @@ kapt {
 }
 
 
-//TODO : enable and configure (config/detekt/detekt.yml) detekt in plugin
+// TODO : enable detekt
+// config file (config/detekt/detekt.yml) & baseline file (config/detekt/baseline.xml)
 detekt {
     failFast = false // fail build on any finding
     buildUponDefaultConfig = true // preconfigure defaults
     // If set to `true` the build does not fail when the maxIssues count was reached. Defaults to `false`
     ignoreFailures = true
     config = files("$projectDir/config/detekt.yml") // point to your custom config defining rules to run, overwriting default behavior
+    baseline = file("$projectDir/config/baseline.xml") // a way of suppressing issues before introducing detekt
 
     ignoredBuildTypes = ["release"]
 
