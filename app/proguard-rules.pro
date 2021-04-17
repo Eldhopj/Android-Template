@@ -19,3 +19,16 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+#TODO : update package name
+-keep class com.eldhopj.myapplication.model.* { *; }
+
+-keepnames class * extends android.os.Parcelable
+
+-keepclassmembers enum * { *; }
+
+#For enable only for debugging
+#-keepattributes LocalVariableTable, LocalVariableTypeTable
+
+#For keeping annotation
+#-keepattributes *Annotation*, Signature, Exception

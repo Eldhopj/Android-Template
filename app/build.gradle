@@ -24,7 +24,13 @@ android {
 
     buildTypes {
         release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
             minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -75,6 +81,9 @@ dependencies {
     def glide_version = "4.12.0"
     implementation "com.github.bumptech.glide:glide:$glide_version"
     kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    // For detecting memory leak
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
 
     // Testing
     testImplementation 'junit:junit:4.13.2'

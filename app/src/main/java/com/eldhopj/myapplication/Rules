@@ -1,0 +1,22 @@
+# common view in styles
+
+# keep dimension always in in dimen folder
+
+# style AppTextAppearance in this format
+
+    <style name="AppTextAppearance">
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textColor">@color/textColor1</item>
+    </style>
+
+    <style name="AppTextAppearance.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:fontFamily">@font/manrope_regular</item>
+        <item name="fontFamily">@font/manrope_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+# Naming convention of res
+layout : https://miro.medium.com/max/700/1*E2CNQ6wxVwBS1fBvQzfPzQ.png
+drawable : https://miro.medium.com/max/2400/1*YrWmzRSvz9BWosoE5Qtykg.png
+
+# Remember to save the ProGuard mappings files produced when you build a release version and upload them to Play to get de-obfuscated stack traces from any crashes experienced by your users.
