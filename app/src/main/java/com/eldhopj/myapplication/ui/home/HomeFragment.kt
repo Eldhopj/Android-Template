@@ -1,7 +1,5 @@
 package com.eldhopj.myapplication.ui.home
 
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.eldhopj.myapplication.databinding.FragmentHomeBinding
 import com.eldhopj.myapplication.ui.base.BaseFragment
@@ -13,11 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
  * @constructor Create empty Home fragment
  */
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 
     private val viewModel by viewModels<HomeViewModel>()
-
-    override fun setBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentHomeBinding =
-        FragmentHomeBinding.inflate(inflater, container, false)
-
 }
