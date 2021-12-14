@@ -15,7 +15,8 @@ import com.eldhopj.myapplication.utils.extensions.unblockInput
  * @param T
  * @constructor Create empty Base fragment view binding
  */
-abstract class BaseFragment<T : ViewBinding> : Fragment() {
+abstract class BaseFragment<T : ViewBinding>(private val bindingInflater: (inflater: LayoutInflater) -> T) :
+    Fragment() {
 
     // Bindings
     private var _binding: T? = null
@@ -23,7 +24,7 @@ abstract class BaseFragment<T : ViewBinding> : Fragment() {
     /**
      * Binding
      */
-    protected open val binding get() = _binding
+    protected val binding get() = _binding
 
     /**
      * getting Activity
@@ -35,7 +36,7 @@ abstract class BaseFragment<T : ViewBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = this.setBinding(inflater, container)
+        _binding = bindingInflater.invoke(inflater)
         return binding?.root
     }
 
@@ -44,13 +45,4 @@ abstract class BaseFragment<T : ViewBinding> : Fragment() {
         hostActivity?.unblockInput()
         _binding = null
     }
-
-    /**
-     * Set binding
-     *
-     * @param inflater
-     * @param container
-     * @return
-     */
-    abstract fun setBinding(inflater: LayoutInflater, container: ViewGroup?): T
 }
