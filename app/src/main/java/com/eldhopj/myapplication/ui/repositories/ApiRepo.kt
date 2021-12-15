@@ -14,5 +14,5 @@ import javax.inject.Singleton
 class ApiRepo @Inject constructor(private val apiHandler: ApiHandler) {
 
     // TODO :  Rename class with api path
-    // Eg: /content/songs -> ContentRepo
+    // Eg: /content/songs -> ContentApiRepo
 }

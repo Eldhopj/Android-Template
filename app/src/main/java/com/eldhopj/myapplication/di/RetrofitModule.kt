@@ -11,7 +11,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import java.io.File
-import java.io.IOException
 import java.util.concurrent.TimeUnit
 import javax.inject.Named
 import javax.inject.Singleton
@@ -19,7 +18,6 @@ import okhttp3.Cache
 import okhttp3.CacheControl
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 
 @Module
@@ -32,7 +30,6 @@ object RetrofitModule {
     private const val CACHE_SIZE = 5 * 1024 * 1024.toLong() // 5 MB
     private const val MAX_AGE = 10 // if a request comes within 10s it will show from cache
     private const val MAX_STALE = 15 // No days cache works when offline mode
-
 
     @Provides
     @Singleton
@@ -69,21 +66,25 @@ object RetrofitModule {
     @Named("header")
     fun providesHeaders(@ApplicationContext context: Context): Interceptor {
         /**If there are any headers its adds in here */
-        return object : Interceptor {
-            @Throws(IOException::class)
-            override fun intercept(chain: Interceptor.Chain): Response {
-                val original = chain.request()
+        return Interceptor { chain ->
+            val original = chain.request()
+            val requestBuilder = original.newBuilder()
                 //Ignoring endpoints which need not needed tokens
-//                if (original.url.encodedPath.equals("/oauth/token", ignoreCase = true)
-//                    || original.url.encodedPath.equals("/api/v1/login", ignoreCase = true)
-//                    || original.method.equals("post", ignoreCase = true)) {
-//                    return chain.proceed(original)
+//                .apply {
+//                    if (!original.url.encodedPath.equals(
+//                            "/oauth/token",
+//                            ignoreCase = true
+//                        ) && !original.url.encodedPath.equals(
+//                            "/api/v1/login",
+//                            ignoreCase = true
+//                        ) && !original.method.equals("post", ignoreCase = true)
+//                    ) {
+//                        header("Authorization", "key")
+//                    }
 //                }
-                val requestBuilder = original.newBuilder()
-                    .header("User-Agent", context.getAppUserAgent()) // Headers
-                val request = requestBuilder.build()
-                return chain.proceed(request)
-            }
+                .header("User-Agent", context.getAppUserAgent()) // Headers
+            val request = requestBuilder.build()
+            chain.proceed(request)
         }
     }
 

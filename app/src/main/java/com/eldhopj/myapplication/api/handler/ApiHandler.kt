@@ -15,8 +15,8 @@ import retrofit2.Retrofit
 @Singleton
 class ApiHandler @Inject constructor(retrofit: Retrofit) {
 
-    private val apiService: ApiService = retrofit.create(ApiService::class.java)
+    private val apiService: ApiService by lazy { retrofit.create(ApiService::class.java) }
 
     // TODO :  Rename class with api path
-    // Eg: /content/songs -> ContentHandler
+    // Eg: /content/songs -> ContentApiHandler
 }
