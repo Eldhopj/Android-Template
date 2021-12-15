@@ -13,6 +13,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/divider.xml" value="0.28055555555555556" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2833333333333333" />
       </map>
     </option>

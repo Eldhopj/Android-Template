@@ -7,5 +7,5 @@ package com.eldhopj.myapplication.api.service
  */
 interface ApiService {
     // TODO :  Rename class with api path
-    // Eg: /content/songs -> ContentService
+    // Eg: /content/songs -> ContentApiService
 }

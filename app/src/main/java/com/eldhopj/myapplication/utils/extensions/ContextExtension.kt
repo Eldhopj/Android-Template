@@ -1,8 +1,9 @@
 package com.eldhopj.myapplication.utils.extensions
 
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
+import android.content.pm.PackageManager.NameNotFoundException
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
@@ -112,7 +113,7 @@ fun Context?.openAppInPlayStore() {
     if (this == null) return
     try {
         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$packageName")))
-    } catch (e: android.content.ActivityNotFoundException) {
+    } catch (e: ActivityNotFoundException) {
         startActivity(
             Intent(
                 Intent.ACTION_VIEW,
@@ -131,7 +132,7 @@ fun Context?.getAppUserAgent(): String {
         val packageName = packageName
         val info = packageManager.getPackageInfo(packageName, 0)
         info.versionName
-    } catch (e: PackageManager.NameNotFoundException) {
+    } catch (e: NameNotFoundException) {
         "?"
     }
     return "${this.getString(R.string.app_name)}/$versionName" +

@@ -1,42 +1,35 @@
 package com.eldhopj.myapplication.utils.network
 
 /**
- * Resource
+ * Network response
  *
  * @param T
- * @property data
- * @property message
- * @constructor Create empty Resource
+ * @constructor Create empty Network response
  */
-sealed class NetworkResponse<T>(val data: T? = null, val message: String? = null) {
+sealed class NetworkResponse<out T> {
+
     /**
      * Loading
      *
-     * @param T
-     * @constructor
-     *
-     * @param data
+     * @constructor Create empty Loading
      */
-    class Loading<T>(data: T? = null) : NetworkResponse<T>(data)
+    object Loading : NetworkResponse<Nothing>()
 
     /**
      * Success
      *
      * @param T
-     * @constructor
-     *
-     * @param data
+     * @property data
+     * @constructor Create empty Success
      */
-    class Success<T>(data: T?) : NetworkResponse<T>(data)
+    data class Success<out T>(val data: T?) : NetworkResponse<T>()
 
     /**
      * Error
      *
      * @param T
-     * @constructor
-     *
-     * @param message
-     * @param data
+     * @property message
+     * @constructor Create empty Error
      */
-    class Error<T>(message: String, data: T? = null) : NetworkResponse<T>(data, message)
+    data class Error<out T>(val message: String) : NetworkResponse<T>()
 }

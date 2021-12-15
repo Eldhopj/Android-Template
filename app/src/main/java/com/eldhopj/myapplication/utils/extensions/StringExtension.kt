@@ -16,4 +16,8 @@ fun String?.isLegalName(): Boolean = this != null &&
  *
  *Eg: hello world -> Hello world
  */
-fun String?.titleCase() = this?.toLowerCase(Locale.getDefault())?.capitalize(Locale.getDefault())
+fun String?.titleCase() = this?.lowercase(Locale.getDefault())?.replaceFirstChar {
+    if (it.isLowerCase()) it.titlecase(
+        Locale.getDefault()
+    ) else it.toString()
+}
