@@ -1,4 +1,4 @@
-package com.eldhopj.myapplication.ui.main
+package com.eldhopj.myapplication.ui.view.main
 
 import android.os.Bundle
 import androidx.activity.viewModels

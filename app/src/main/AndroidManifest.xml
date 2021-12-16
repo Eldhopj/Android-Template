@@ -17,7 +17,7 @@
         android:theme="@style/Theme.Template2021"
         tools:targetApi="n">
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name="com.eldhopj.myapplication.ui.view.main.MainActivity"
             android:exported="true"
             android:launchMode="singleTask">
             <intent-filter>

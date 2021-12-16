@@ -1,6 +1,6 @@
-package com.eldhopj.myapplication.api.handler
+package com.eldhopj.myapplication.data.api.handler
 
-import com.eldhopj.myapplication.api.service.ApiService
+import com.eldhopj.myapplication.data.api.service.ApiService
 import javax.inject.Inject
 import javax.inject.Singleton
 import retrofit2.Retrofit
