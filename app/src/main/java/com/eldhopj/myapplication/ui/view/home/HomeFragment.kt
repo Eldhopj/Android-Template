@@ -1,4 +1,4 @@
-package com.eldhopj.myapplication.ui.home
+package com.eldhopj.myapplication.ui.view.home
 
 import androidx.fragment.app.viewModels
 import com.eldhopj.myapplication.databinding.FragmentHomeBinding

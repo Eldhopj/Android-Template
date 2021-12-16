@@ -21,7 +21,7 @@
 #-renamesourcefileattribute SourceFile
 
 #TODO : update package name
--keep class com.eldhopj.myapplication.model.* { *; }
+-keep class com.eldhopj.myapplication.data.model.* { *; }
 
 -keepnames class * extends android.os.Parcelable
 

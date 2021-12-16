@@ -1,7 +1,7 @@
-package com.eldhopj.myapplication.ui.main
+package com.eldhopj.myapplication.ui.view.main
 
 import androidx.lifecycle.ViewModel
-import com.eldhopj.myapplication.ui.repositories.ApiRepo
+import com.eldhopj.myapplication.data.repositories.ApiRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
