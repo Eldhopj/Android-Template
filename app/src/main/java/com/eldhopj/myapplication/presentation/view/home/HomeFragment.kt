@@ -1,8 +1,8 @@
-package com.eldhopj.myapplication.ui.view.home
+package com.eldhopj.myapplication.presentation.view.home
 
 import androidx.fragment.app.viewModels
 import com.eldhopj.myapplication.databinding.FragmentHomeBinding
-import com.eldhopj.myapplication.ui.base.BaseFragment
+import com.eldhopj.myapplication.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 /**

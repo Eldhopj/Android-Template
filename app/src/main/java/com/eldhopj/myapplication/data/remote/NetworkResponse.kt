@@ -1,4 +1,4 @@
-package com.eldhopj.myapplication.utils.network
+package com.eldhopj.myapplication.data.remote
 
 /**
  * Network response

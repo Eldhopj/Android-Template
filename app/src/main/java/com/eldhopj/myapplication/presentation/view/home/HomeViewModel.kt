@@ -1,4 +1,4 @@
-package com.eldhopj.myapplication.ui.view.home
+package com.eldhopj.myapplication.presentation.view.home
 
 import androidx.lifecycle.ViewModel
 import com.eldhopj.myapplication.data.repositories.ApiRepo

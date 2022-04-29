@@ -1,4 +1,4 @@
-package com.eldhopj.myapplication.data.api.service
+package com.eldhopj.myapplication.data.remote.service
 
 /**
  * Api service

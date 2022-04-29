@@ -3,8 +3,8 @@ package com.eldhopj.myapplication.di
 import android.content.Context
 import com.eldhopj.myapplication.BuildConfig
 import com.eldhopj.myapplication.R
-import com.eldhopj.myapplication.utils.extensions.getAppUserAgent
-import com.eldhopj.myapplication.utils.extensions.isOnline
+import com.eldhopj.android_extensions.getAppUserAgent
+import com.eldhopj.android_extensions.isOnline
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -114,7 +114,6 @@ object RetrofitModule {
     /**
      * This interceptor will be called both if the network is available and the network is not available
      */
-
     @Provides
     @Singleton
     @Named("offlineInterceptor")
