@@ -1,4 +1,4 @@
-package com.eldhopj.myapplication.utils.extensions
+package com.eldhopj.myapplication.domain.utils.extensions
 
 import android.content.res.ColorStateList
 import android.graphics.PorterDuff
@@ -24,24 +24,4 @@ fun ImageView.glide(url: String?) {
         .fallback(R.drawable.ic_launcher_background)
         .error(R.drawable.ic_launcher_background)
         .into(this)
-}
-
-/**
- * Get EditText value
- */
-val EditText.value
-    get() = text?.toString() ?: ""
-
-/**
- * Set tint to Image Button
- *
- * @param color
- */
-fun AppCompatImageButton.setTint(@ColorInt color: Int?) {
-    if (color == null) {
-        ImageViewCompat.setImageTintList(this, null)
-        return
-    }
-    ImageViewCompat.setImageTintMode(this, PorterDuff.Mode.SRC_ATOP)
-    ImageViewCompat.setImageTintList(this, ColorStateList.valueOf(color))
 }

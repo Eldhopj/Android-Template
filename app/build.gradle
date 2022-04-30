@@ -6,17 +6,17 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
     id 'dagger.hilt.android.plugin'
     id 'com.google.firebase.crashlytics'
-    id "io.gitlab.arturbosch.detekt" version "1.19.0"
+    id "io.gitlab.arturbosch.detekt" version "1.20.0"
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 32
     buildToolsVersion "31.0.0"
 
     defaultConfig {
         applicationId "com.eldhopj.myapplication"
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 32
         versionCode 1
         versionName "1.0"
 
@@ -59,15 +59,14 @@ android {
 dependencies {
 
     // Core libs
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
-    implementation "androidx.fragment:fragment-ktx:1.4.0"
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation "androidx.fragment:fragment-ktx:1.4.1"
     implementation "androidx.recyclerview:recyclerview:1.2.1"
 
-    def lifecycle_version = "2.4.0"
+    def lifecycle_version = "2.4.1"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
 
@@ -86,7 +85,7 @@ dependencies {
     implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.3"))
     implementation("com.squareup.okhttp3:logging-interceptor")// No version!
 
-    def glide_version = "4.12.0"
+    def glide_version = "4.13.1"
     implementation "com.github.bumptech.glide:glide:$glide_version"
     kapt "com.github.bumptech.glide:compiler:$glide_version"
 
@@ -95,8 +94,11 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:29.0.1')
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
 
+    implementation 'com.github.Eldhopj:kotlin-extensions:1.1'
+    implementation 'com.github.Eldhopj:android-extensions:1.0'
+
     // For detecting memory leak
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.9.1'
 
     // Testing
     testImplementation 'junit:junit:4.13.2'

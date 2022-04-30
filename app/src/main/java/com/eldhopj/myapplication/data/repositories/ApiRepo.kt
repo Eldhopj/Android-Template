@@ -1,6 +1,6 @@
 package com.eldhopj.myapplication.data.repositories
 
-import com.eldhopj.myapplication.data.api.handler.ApiHandler
+import com.eldhopj.myapplication.data.remote.handler.ApiHandler
 import javax.inject.Inject
 import javax.inject.Singleton
 
