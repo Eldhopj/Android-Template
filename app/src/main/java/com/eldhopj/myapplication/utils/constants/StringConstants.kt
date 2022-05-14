@@ -1,4 +1,4 @@
-package com.eldhopj.myapplication.domain.utils.constants
+package com.eldhopj.myapplication.utils.constants
 
 /**
  * String constants
