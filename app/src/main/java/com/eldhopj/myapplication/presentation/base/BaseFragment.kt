@@ -26,11 +26,6 @@ abstract class BaseFragment<T : ViewBinding>(private val bindingInflater: (infla
      */
     protected val binding get() = _binding
 
-    /**
-     * getting Activity
-     */
-    protected val hostActivity by lazy { requireActivity() as? MainActivity }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -42,7 +37,6 @@ abstract class BaseFragment<T : ViewBinding>(private val bindingInflater: (infla
 
     override fun onDestroyView() {
         super.onDestroyView()
-        hostActivity?.unblockInput()
         _binding = null
     }
 }
