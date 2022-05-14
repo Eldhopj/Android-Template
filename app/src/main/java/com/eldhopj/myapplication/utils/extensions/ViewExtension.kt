@@ -1,12 +1,6 @@
-package com.eldhopj.myapplication.domain.utils.extensions
+package com.eldhopj.myapplication.utils.extensions
 
-import android.content.res.ColorStateList
-import android.graphics.PorterDuff
-import android.widget.EditText
 import android.widget.ImageView
-import androidx.annotation.ColorInt
-import androidx.appcompat.widget.AppCompatImageButton
-import androidx.core.widget.ImageViewCompat
 import com.bumptech.glide.Glide
 import com.eldhopj.myapplication.R
 

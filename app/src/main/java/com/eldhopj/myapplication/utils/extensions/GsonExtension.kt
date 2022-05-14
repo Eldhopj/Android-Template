@@ -1,4 +1,4 @@
-package com.eldhopj.myapplication.domain.utils.extensions
+package com.eldhopj.myapplication.utils.extensions
 
 import com.google.gson.Gson
 import com.google.gson.JsonElement

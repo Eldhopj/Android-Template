@@ -1,4 +1,4 @@
-package com.eldhopj.myapplication.domain.utils.constants
+package com.eldhopj.myapplication.data.constants
 
 /**
  * Here we mention all api end points
