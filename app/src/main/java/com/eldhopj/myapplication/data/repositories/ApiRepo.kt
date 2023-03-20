@@ -1,18 +1,12 @@
 package com.eldhopj.myapplication.data.repositories
 
-import com.eldhopj.myapplication.data.remote.handler.ApiHandler
-import javax.inject.Inject
-import javax.inject.Singleton
 
 /**
- * Api repo
+ * Api repo interface impl
  *
- * @property apiHandler
- * @constructor Create empty Api repo
+ * @constructor Create empty api repo
  */
-@Singleton
-class ApiRepo @Inject constructor(private val apiHandler: ApiHandler) {
-
+interface ApiRepo {
+    // Blueprints of apis
     // TODO :  Rename class with api path
-    // Eg: /content/songs -> ContentApiRepo
 }

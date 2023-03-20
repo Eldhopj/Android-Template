@@ -1,7 +1,7 @@
 package com.eldhopj.myapplication.presentation.view.home
 
-import androidx.lifecycle.ViewModel
-import com.eldhopj.myapplication.data.repositories.ApiRepo
+import com.eldhopj.myapplication.data.repositories.ApiRepoImpl
+import com.eldhopj.myapplication.utils.bases.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -13,7 +13,7 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val repo: ApiRepo,
-) : ViewModel() {
+    private val repo: ApiRepoImpl,
+) : BaseViewModel() {
     //
 }
