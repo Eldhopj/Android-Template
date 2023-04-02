@@ -1,6 +1,6 @@
 package com.eldhopj.myapplication.data.repositories
 
-import com.eldhopj.myapplication.data.remote.handler.ApiHandler
+import com.eldhopj.myapplication.data.remote.service.ApiService
 import com.eldhopj.myapplication.utils.bases.baseRepository.ApiCall
 import com.eldhopj.myapplication.utils.bases.baseRepository.DbCall
 import com.eldhopj.myapplication.utils.bases.baseRepository.SafeApiCall
@@ -11,11 +11,11 @@ import javax.inject.Inject
 /**
  * Api repo
  *
- * @property apiHandler
+ * @property apiService
  * @constructor Create empty Api repo
  */
 @ViewModelScoped
-class ApiRepoImpl @Inject constructor(private val apiHandler: ApiHandler) :
+class ApiRepoImpl @Inject constructor(private val apiService: ApiService) :
     ApiCall by SafeApiCall(), DbCall by SafeDbCall(), ApiRepo {
 
     // TODO :  Rename class with api path
