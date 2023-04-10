@@ -1,7 +1,7 @@
 package com.eldhopj.myapplication.di
 
-import com.eldhopj.myapplication.data.repositories.ApiRepo
 import com.eldhopj.myapplication.data.repositories.ApiRepoImpl
+import com.eldhopj.myapplication.domain.repoInterface.ApiRepo
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -19,5 +19,5 @@ abstract class RepositoryModule {
 
     @Binds
     @ViewModelScoped
-    abstract fun provideEverythingRepo(apiRepoImpl: ApiRepoImpl): ApiRepo
+    abstract fun bindsEverythingRepo(apiRepoImpl: ApiRepoImpl): ApiRepo
 }

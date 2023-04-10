@@ -1,4 +1,4 @@
-package com.eldhopj.myapplication.data.repositories
+package com.eldhopj.myapplication.domain.repoInterface
 
 
 /**

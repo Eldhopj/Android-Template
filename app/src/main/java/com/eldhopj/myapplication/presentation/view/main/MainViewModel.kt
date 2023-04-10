@@ -1,7 +1,7 @@
 package com.eldhopj.myapplication.presentation.view.main
 
 import androidx.lifecycle.ViewModel
-import com.eldhopj.myapplication.data.repositories.ApiRepo
+import com.eldhopj.myapplication.domain.repoInterface.ApiRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

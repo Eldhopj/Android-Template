@@ -1,6 +1,7 @@
 package com.eldhopj.myapplication.data.repositories
 
 import com.eldhopj.myapplication.data.remote.service.ApiService
+import com.eldhopj.myapplication.domain.repoInterface.ApiRepo
 import com.eldhopj.myapplication.utils.bases.baseRepository.ApiCall
 import com.eldhopj.myapplication.utils.bases.baseRepository.DbCall
 import com.eldhopj.myapplication.utils.bases.baseRepository.SafeApiCall
