@@ -4,7 +4,7 @@ import android.util.MalformedJsonException
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.eldhopj.myapplication.data.remote.ErrorData
+import com.eldhopj.myapplication.domain.model.handlers.ErrorData
 import java.io.InterruptedIOException
 import java.net.SocketException
 import java.net.UnknownHostException

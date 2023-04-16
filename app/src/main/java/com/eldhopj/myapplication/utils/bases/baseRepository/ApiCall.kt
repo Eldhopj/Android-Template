@@ -1,6 +1,6 @@
 package com.eldhopj.myapplication.utils.bases.baseRepository
 
-import com.eldhopj.myapplication.data.remote.Output
+import com.eldhopj.myapplication.domain.model.handlers.Output
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

@@ -1,7 +1,7 @@
 package com.eldhopj.myapplication.utils.bases.baseRepository
 
-import com.eldhopj.myapplication.data.remote.ErrorData
-import com.eldhopj.myapplication.data.remote.Output
+import com.eldhopj.myapplication.domain.model.handlers.ErrorData
+import com.eldhopj.myapplication.domain.model.handlers.Output
 import java.io.IOException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.delay

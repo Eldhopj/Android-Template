@@ -19,5 +19,5 @@ abstract class RepositoryModule {
 
     @Binds
     @ViewModelScoped
-    abstract fun bindsEverythingRepo(apiRepoImpl: ApiRepoImpl): ApiRepo
+    abstract fun bindsApiRepo(apiRepoImpl: ApiRepoImpl): ApiRepo
 }
